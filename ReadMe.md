@@ -33,6 +33,26 @@ This is a project intended to use a RAG based approach to talk to pdf files, mos
 
 ![architecture](./assets/askmypdf.png)
 
+## Usage
+
+- Create the conda environment using
+
+  ``` bash
+    conda env create -f environment.yml
+  ```
+
+- Activate the conda environment
+  
+  ``` bash
+    conda env create -f environment.yml
+  ```
+
+- Run the main file
+
+  ``` bash
+    python main.py
+  ```
+
 ## Sample Chat with a Metrology Paper 
 
 [Paper Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5453275/)
@@ -82,3 +102,7 @@ Filtered Answer: No, the ambient temperature was not mentioned as 30 degrees in 
 - Vector DB is use is FAISS which is small in footprint and faster in terms of search.
 - Hardware running the experimental setup RTX 3060 with 32 GB RAM.
 - The processing time is too slow in this setup (BUG).
+
+### v0.0.2 (feature)
+
+- Added environment.yaml file for the dependencies.

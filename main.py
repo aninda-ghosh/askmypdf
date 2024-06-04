@@ -72,7 +72,7 @@ if __name__ == "__main__":
     agent = AskMyPDFAgent(llm_chain, document_processor)
     
     while True:
-        query = input("Enter your question: ")
+        query = input("\n\nEnter your question: ")
 
         if query.lower() == "exit":
             break
@@ -85,7 +85,7 @@ if __name__ == "__main__":
         answer = answer["text"]
 
         # Print time to answer in milliseconds
-        print("Time to answer: ", (t2-t1)/1000000, "secs")
+        print("Time to answer: ", (t2-t1), "secs")
 
         # Define the substring to search for
         substring = '[/INST]\n'
@@ -100,6 +100,6 @@ if __name__ == "__main__":
         else:
             filtered_answer = "The substring was not found."
         
-        print("Filtered Answer: ", filtered_answer)
+        print("Filtered Answer: \n", filtered_answer)
 
         

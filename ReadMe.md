@@ -54,10 +54,10 @@
     conda activate askmypdf
     ```
 
-3. **Run the Application**
+3. **Run the Application with appropriate arcguments for different models**
 
     ```bash
-    python main.py
+    python main.py -m <mistral/gemma> -d <DOC PATH>
     ```
 
 ## Sample Interaction
@@ -68,6 +68,11 @@
 ![GPU Utilization](./assets/gpu_utilization.png)
 
 ## Changelogs
+
+### v0.0.4
+
+- Added support for Gemma-2B-it model.
+- Different contextual lengths are being passed for different models. e.g For mistral the document chunk size is of 1000 where as for gemma it is around 2000
 
 ### v0.0.3
 

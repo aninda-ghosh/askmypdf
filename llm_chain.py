@@ -52,7 +52,7 @@ class LLM_Chain:
             model=self.llm_model,
             tokenizer=self.llm_tokenizer, 
             task='text-generation', 
-            temperature=0.05,
+            temperature=0.005,
             repetition_penalty=1.1,
             return_full_text=True, 
             max_new_tokens=300
@@ -75,7 +75,7 @@ class LLM_Chain:
         llm = HuggingFacePipeline(pipeline=llm_pipeline)
 
         prompt = PromptTemplate(
-            input_variables=['context', 'question'],
+            input_variables=['context', 'page_number', 'question'],
             template=prompt_template
         )
 

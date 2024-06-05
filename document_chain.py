@@ -22,7 +22,7 @@ class DocumentProcessor:
 
     """
     
-    def __init__(self, document_path):
+    def __init__(self, document_path, chunk_size=1000, chunk_overlap=200):
         """
         Initializes the DocumentProcessor with a specified document path.
 
@@ -35,8 +35,8 @@ class DocumentProcessor:
 
         # Split documents into text and embeddings
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=1000, 
-            chunk_overlap=150
+            chunk_size=chunk_size, 
+            chunk_overlap=chunk_overlap
         )
         chunked_documents = text_splitter.split_documents(self.document)
         
@@ -55,7 +55,7 @@ class DocumentProcessor:
         """
         retriever = self.db.as_retriever(
             search_type="similarity",
-            search_kwargs={'k': 4}, 
+            search_kwargs={'k': 5}, 
             score_threshold=0.9
         )
         return retriever.search(query)

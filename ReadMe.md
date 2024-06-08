@@ -69,6 +69,10 @@
 
 ## Changelogs
 
+### v0.0.5
+
+- Added support for Meta-LLAMA3-8B-it model.
+
 ### v0.0.4
 
 - Added support for Gemma-2B-it model.

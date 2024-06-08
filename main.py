@@ -61,6 +61,9 @@ if __name__ == "__main__":
     if args.model == "mistral":
         llm_chain = LLM_Chain(llm_model_path='mistralai/Mistral-7B-Instruct-v0.3')
         document_processor = DocumentProcessor(args.document, chunk_size=1000, chunk_overlap=200)
+    elif args.model == "llama":
+        llm_chain = LLM_Chain(llm_model_path='meta-llama/Meta-Llama-3-8B-Instruct')
+        document_processor = DocumentProcessor(args.document, chunk_size=1000, chunk_overlap=200)
     elif args.model == "gemma":
         llm_chain = LLM_Chain(llm_model_path='google/gemma-1.1-2b-it', enable_quantization=False)
         document_processor = DocumentProcessor(args.document, chunk_size=2000, chunk_overlap=500)
@@ -96,7 +99,7 @@ if __name__ == "__main__":
         if position != -1:
             filtered_answer = answer[position + len(substring):].strip()
         else:
-            filtered_answer = "The substring was not found."
+            filtered_answer = "Invalid Answer"
         
         # Print the filtered answer
-        print("Filtered Answer: \n", filtered_answer)
+        print("Answer: \n", filtered_answer)
